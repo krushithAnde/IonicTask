@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register Employee</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="buttonText" [icon]="buttonIcon">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+    <ion-list>
+      <ion-item>
+        <ion-input formControlName="empNameControl" required="true" placeholder="Employee Name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input formControlName="ageControl" required="true" type="number" placeholder="Age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input formControlName="designationControl" required="true" placeholder="Designation"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input formControlName="departmentControl" required="true" placeholder="Department"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input formControlName="reportingMngrControl" required="true" placeholder="Reporting Manager"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button size="large" type="submit" [disabled]="!formGroup.valid" expand="block">Register</ion-button>
+
+  </form>
+</ion-content>
